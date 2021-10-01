@@ -1,0 +1,52 @@
+name: flutter_code_base
+description: The Flutter Project Base Created by BrianNguyen
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  #------------------
+  #Cores
+  get_it: any
+  flutter_bloc: any
+  equatable: any
+  logger: any
+   # flutter pub run build_runner build --delete-conflicting-outputs
+  json_annotation: any
+  retrofit: any
+  # flutter packages pub run build_runner build
+  floor: ^1.1.0
+  flutter_secure_storage: any
+  flutter_easyloading: any
+  page_transition: any
+  #------------------
+
+  recase: ^4.0.0
+
+  intl: ^0.17.0
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  retrofit_generator: any
+  json_serializable: any
+  floor_generator: any
+  build_runner: any
+  flutter_lints: any
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+flutter_intl:
+  enabled: true # Required. Must be set to true to activate the plugin. Default: false
+  class_name: s # Optional. Sets the name for the generated localization class. Default: S
+  main_locale: en_US # Optional. Sets the main locale used for generating localization files. Provided value should comply with ISO-639-1 and ISO-3166-1 (e.g. "en", "en_GB"). Default: en
