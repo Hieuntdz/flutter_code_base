@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_code_base/constants/constants.dart';
 import 'package:flutter_code_base/core/core.dart';
-import 'package:get_it/get_it.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  const AppScaffold<MainBloc>(
+    return const AppScaffold<MainBloc>(
       title: 'Home ABC',
       body: HomeWidget(),
       showBackButton: false,
@@ -30,15 +28,17 @@ class HomeWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(RouteConstants.api);
-              },
-              child: const Text(ButtonConstatns.api)),
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteConstants.api);
+            },
+            child: Text('Button 1'),
+          ),
           ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(RouteConstants.cached);
-              },
-              child: const Text(ButtonConstatns.cached))
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteConstants.cached);
+            },
+            child: Text('Button 2'),
+          )
         ],
       ),
     );

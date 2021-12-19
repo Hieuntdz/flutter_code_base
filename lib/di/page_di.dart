@@ -4,7 +4,6 @@ import 'package:flutter_code_base/presentation/screens/main_screen.dart';
 import 'package:flutter_code_base/presentation/screens/screens.dart';
 import 'package:get_it/get_it.dart';
 
-
 class PageDI {
   PageDI._();
 

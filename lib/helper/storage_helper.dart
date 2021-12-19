@@ -2,6 +2,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class StorageHelper {
   StorageHelper._();
+
   static final StorageHelper instance = StorageHelper._();
 
   final storage = const FlutterSecureStorage();
@@ -24,7 +25,7 @@ class StorageHelper {
     await storage.deleteAll();
   }
 
-  Future<void> delete({required String key}) async{
+  Future<void> delete({required String key}) async {
     await storage.delete(key: key);
   }
 }

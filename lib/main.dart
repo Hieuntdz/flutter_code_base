@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       create: (context) => AppInjector.injector<AppBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Base Project',
+        title: 'Flutter base Project',
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
         initialRoute: RouteConstants.splash,
         theme: AppTheme.light,
         builder: EasyLoading.init(),
-
       ),
     );
   }

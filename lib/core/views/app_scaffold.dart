@@ -26,9 +26,8 @@ class AppScaffold<T extends Bloc> extends StatelessWidget {
   final bool safeArea;
   final Widget? footer;
 
-  Future<bool> _willPopCallback() async {
+  _willPopCallback() async {
     onWillPop?.call();
-    return Future.value(showBackButton);
   }
 
   @override
