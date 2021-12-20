@@ -6,10 +6,10 @@ import 'package:path/path.dart';
 Future<int> gen(List<String> folders) async {
   Directory current = Directory.current;
 
-  File _file =
-      File('${current.path}/lib/helper/image_helper/asset_helper.g.dart');
+  File _file = File('${current.path}/lib/helper/image_helper/asset_helper.g.dart');
 
   String properties = '';
+  String hasAsset = '\n';
   int total = 0;
 
   Map<String, bool> mark = {};
@@ -33,11 +33,15 @@ Future<int> gen(List<String> folders) async {
       }
       mark[property] = true;
       properties += """\tstatic const String $property = '$path';\n""";
+      hasAsset += """\t'$path': true,\n""";
     }
     total += files.length;
   }
+
   await _file.writeAsString('''part of 'asset_helper.dart';
-mixin AssetHelper {$properties}''');
+mixin AssetHelper {$properties
+  static const Map<String, bool> hasAsset = {$hasAsset};
+}''');
   return total;
 }
 
@@ -55,8 +59,7 @@ Future<void> start() async {
   print('***[AssetHelper] STARTED ***');
   List<String> folders = ['images'];
   int total = await gen(folders);
-  print(
-      '***[AssetHelper] GENERATED ${folders.length} folders and $total files ***');
+  print('***[AssetHelper] GENERATED ${folders.length} folders and $total files ***');
 }
 
 main() {

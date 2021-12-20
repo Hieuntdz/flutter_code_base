@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_code_base/helper/image_helper/asset_helper.dart';
 import 'package:get_it/get_it.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -10,10 +11,20 @@ class AppRoutes {
     } catch (e) {
       widget = Scaffold(
         backgroundColor: Colors.white,
+        // extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: const Text('Không tìm thấy trang'),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(AssetHelper.splash),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
         ),
-        body: const Center(child: Text('Page not found')),
+        body:  Center(),
       );
     }
     return PageTransition(
